@@ -4,18 +4,26 @@
 #include <vector>
 #include <stdlib.h>
 
+// Main routine
+// TEmp change to trigger tests
+// Change in branch 1
+// New change in branch 1 thatshould not be in branch1
+// another change from branch1
+// comment for the demo
 int main(int argc, char** argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
 
+// Testing array creation
 TEST(own_array, constructor)
 {
     own_array<int> myarray;
     ASSERT_TRUE(0 == myarray.getSize());
 }
 
+// TEsting element addition
 TEST(own_array, addElement)
 {
     own_array<int> myarray;
@@ -61,6 +69,7 @@ TEST(own_array, addElement)
 
 }
 
+// remove element tests
 TEST(own_array, removeElement)
 {
     own_array<int> myarray;
@@ -127,6 +136,7 @@ TEST(own_array, getElement)
     ASSERT_TRUE(-1 == myarray.getElement(5, element)) << "Unexpected result querring element 5 from 1 element array";
 }
 
+// Testing array operations at scale
 TEST(own_array, dataConsistency)
 {
     own_array<long> myarray;
